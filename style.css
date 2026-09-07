@@ -1,0 +1,109 @@
+:root {
+  --paper: #f6f5f1;
+  --ink: #1c1b19;
+  --soft: #55534e;
+  --line: #ddd9d0;
+  --accent: #3a46b8;
+  --flag: #a83a2b;
+  --flag-bg: #f8e6e2;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #16161a;
+    --ink: #eceaE6;
+    --soft: #b3b0a9;
+    --line: #33323a;
+    --accent: #97a1f3;
+    --flag: #e0806d;
+    --flag-bg: #38231e;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+main {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 3rem 1.25rem 6rem;
+}
+
+nav {
+  font-family: system-ui, sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--soft);
+  margin-bottom: 2.5rem;
+}
+
+nav a { color: var(--soft); margin-right: 1rem; }
+
+h1 {
+  font-size: 2rem;
+  line-height: 1.15;
+  margin: 0 0 0.5rem;
+  text-wrap: balance;
+}
+
+h2 {
+  font-size: 1.2rem;
+  margin: 2.5rem 0 0.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+}
+
+/* Sans filet ni retrait : une sous-partie doit rester visiblement sous son titre. */
+h3 {
+  font-size: 1rem;
+  margin: 1.75rem 0 0.4rem;
+}
+
+.updated {
+  font-family: system-ui, sans-serif;
+  font-size: 0.85rem;
+  color: var(--soft);
+  margin: 0 0 2rem;
+}
+
+a { color: var(--accent); }
+
+ul { padding-left: 1.2rem; }
+
+li { margin-bottom: 0.4rem; }
+
+dt {
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+dd { margin: 0.2rem 0 0; color: var(--soft); }
+
+.todo {
+  display: block;
+  background: var(--flag-bg);
+  color: var(--flag);
+  border-left: 3px solid var(--flag);
+  padding: 0.75rem 1rem;
+  margin: 1rem 0;
+  font-family: system-ui, sans-serif;
+  font-size: 0.9rem;
+}
+
+footer {
+  margin-top: 4rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+  font-family: system-ui, sans-serif;
+  font-size: 0.85rem;
+  color: var(--soft);
+}

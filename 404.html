@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page introuvable — DreamApp</title>
+<style>
+/*
+  La seule page du site qui ne suive pas la feuille de style commune, et c'est délibéré : elle
+  parle d'être perdu dans le noir. Tout est en ligne ici plutôt que dans style.css, parce qu'une
+  404 servie sur une adresse profonde ne résout pas toujours ses chemins relatifs.
+*/
+:root{
+  --night-1:#232159;
+  --night-2:#1A1748;
+  --night-3:#12103A;
+  --cream:#F4F0E7;
+  --muted:#A29DC6;
+  --line:#332F63;
+  --moon:#F3DFC8;
+}
+*{box-sizing:border-box}
+html,body{min-height:100%}
+body{
+  margin:0;
+  /* Le ciel déborde volontairement de la colonne ; sans ceci il ferait défiler la page de côté
+     sur un téléphone étroit. Et min-height plutôt que height, sinon un contenu plus haut que
+     l'écran se retrouverait coupé en haut par le centrage. */
+  overflow-x:hidden;
+  background:linear-gradient(155deg,var(--night-1) 0%,var(--night-2) 50%,var(--night-3) 100%);
+  color:var(--cream);
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:18px;line-height:1.6;
+  display:flex;align-items:center;justify-content:center;
+  padding:2.5rem 1.25rem;
+}
+main{max-width:34rem;text-align:center;position:relative}
+
+.sky{position:absolute;top:-6rem;left:-4rem;right:-4rem;height:16rem;pointer-events:none;z-index:0}
+.sky circle{fill:var(--cream)}
+
+.mark{position:relative;z-index:1;width:132px;height:132px;margin:0 auto 1.75rem;display:block}
+
+.code{
+  position:relative;z-index:1;
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-size:12px;letter-spacing:.34em;color:var(--muted);
+  margin:0 0 .75rem;
+}
+h1{
+  position:relative;z-index:1;
+  font-size:clamp(28px,6vw,38px);line-height:1.15;margin:0 0 1.25rem;
+  font-weight:normal;text-wrap:balance;
+}
+p{position:relative;z-index:1;margin:0 0 1rem;color:#DCD7EA}
+p.small{font-size:15px;color:var(--muted)}
+
+.links{
+  position:relative;z-index:1;
+  margin:2.25rem 0 0;padding:1.5rem 0 0;border-top:1px solid var(--line);
+  display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;justify-content:center;
+  font-family:system-ui,-apple-system,sans-serif;font-size:14.5px;
+}
+a{color:var(--moon);text-decoration-color:rgba(243,223,200,.4);text-underline-offset:3px}
+a:hover{text-decoration-color:var(--moon)}
+a:focus-visible{outline:2px solid var(--moon);outline-offset:3px;border-radius:3px}
+
+.contact{
+  position:relative;z-index:1;
+  margin:1.75rem 0 0;font-family:system-ui,sans-serif;font-size:14px;color:var(--muted);
+}
+
+@media (prefers-reduced-motion: no-preference){
+  .sky circle{animation:breathe 7s ease-in-out infinite}
+  .sky circle:nth-child(2){animation-delay:-2.4s}
+  .sky circle:nth-child(3){animation-delay:-4.1s}
+  .sky circle:nth-child(4){animation-delay:-5.6s}
+  .sky circle:nth-child(5){animation-delay:-1.2s}
+  @keyframes breathe{
+    0%,100%{opacity:.32}
+    50%{opacity:.7}
+  }
+}
+</style>
+</head>
+<body>
+<main>
+
+  <!-- Étoiles au repos à 32 % d'opacité : visibles immédiatement, l'animation ne fait que respirer. -->
+  <svg class="sky" viewBox="0 0 400 200" aria-hidden="true">
+    <circle cx="38" cy="52" r="1.6" opacity=".32"/>
+    <circle cx="121" cy="24" r="1.1" opacity=".32"/>
+    <circle cx="286" cy="41" r="1.5" opacity=".32"/>
+    <circle cx="352" cy="96" r="1.2" opacity=".32"/>
+    <circle cx="68" cy="132" r="1.3" opacity=".32"/>
+  </svg>
+
+  <!-- Le logo de l'application, repris trait pour trait de ic_launcher_foreground.xml :
+       le nuage en un seul tracé pour qu'un dégradé unique le parcoure, le croissant en deux arcs. -->
+  <svg class="mark" viewBox="0 0 108 108" role="img" aria-label="Logo DreamApp">
+    <defs>
+      <linearGradient id="nuage" gradientUnits="userSpaceOnUse" x1="30" y1="46" x2="62" y2="76">
+        <stop offset="0" stop-color="#EBD7F0"/>
+        <stop offset="0.45" stop-color="#B6ADF2"/>
+        <stop offset="1" stop-color="#6E63E0"/>
+      </linearGradient>
+      <linearGradient id="croissant" gradientUnits="userSpaceOnUse" x1="58" y1="28" x2="80" y2="50">
+        <stop offset="0" stop-color="#FFFCF6"/>
+        <stop offset="1" stop-color="#F3DFC8"/>
+      </linearGradient>
+    </defs>
+    <path fill="#FDF7EE" d="M25,63 a11,11 0 1,1 22,0 a11,11 0 1,1 -22,0 Z
+                            M33.5,58 a11.5,11.5 0 1,1 23,0 a11.5,11.5 0 1,1 -23,0 Z
+                            M48.5,64 a8.5,8.5 0 1,1 17,0 a8.5,8.5 0 1,1 -17,0 Z
+                            M58.5,69 a5.5,5.5 0 1,1 11,0 a5.5,5.5 0 1,1 -11,0 Z
+                            M29,64 h40 v11 h-40 Z"/>
+    <path fill="url(#nuage)" d="M26,63 a10,10 0 1,1 20,0 a10,10 0 1,1 -20,0 Z
+                                M34.5,58 a10.5,10.5 0 1,1 21,0 a10.5,10.5 0 1,1 -21,0 Z
+                                M49.5,64 a7.5,7.5 0 1,1 15,0 a7.5,7.5 0 1,1 -15,0 Z
+                                M59.5,69 a4.5,4.5 0 1,1 9,0 a4.5,4.5 0 1,1 -9,0 Z
+                                M30,65 h38 v9 h-38 Z"/>
+    <path fill="url(#croissant)" d="M79.31,46.40 A13,13 0 1,1 63.34,27.86 A13,13 0 0,0 79.31,46.40 Z"/>
+  </svg>
+
+  <p class="code">ERREUR 404</p>
+
+  <h1>Cette page n'existe pas, ou n'existe plus</h1>
+
+  <p>Toutes nos excuses. Si vous êtes arrivé ici depuis l'application ou depuis un lien que nous
+  avons publié, l'erreur vient de nous et non de vous.</p>
+
+  <p class="small">Les quatre textes de référence de DreamApp sont ci-dessous. Si vous cherchiez à
+  exercer un droit sur vos données, cette page ne doit pas vous en empêcher&nbsp;: écrivez-nous.</p>
+
+  <nav class="links">
+    <a href="/dreamapp-legal/confidentialite/">Confidentialité</a>
+    <a href="/dreamapp-legal/conditions/">Conditions générales</a>
+    <a href="/dreamapp-legal/suppression-compte/">Supprimer mes données</a>
+    <a href="/dreamapp-legal/mentions-legales/">Mentions légales</a>
+  </nav>
+
+  <p class="contact"><a href="mailto:novera.app.contact@gmail.com">novera.app.contact@gmail.com</a></p>
+
+</main>
+</body>
+</html>
