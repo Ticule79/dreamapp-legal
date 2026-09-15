@@ -5,14 +5,9 @@ l'application** — il n'existe que parce que Google exige des URL publiques et 
 
 ## Avant de publier
 
-Chercher `À COMPLÉTER` dans les pages : sept blocs, pour quatre informations seulement, car
-certaines doivent figurer sur plusieurs pages et y dire exactement la même chose.
-
-- identité légale et SIRET (`confidentialite`, `conditions`, `mentions-legales`) ;
-- directeur de la publication (`mentions-legales`) ;
-- région d'hébergement Supabase et transfert hors UE (`confidentialite`, `mentions-legales`) ;
-- **médiateur de la consommation** (`conditions`) — adhésion payante, obligatoire pour tout
-  professionnel vendant à des consommateurs en France, à souscrire avant la première vente.
+Plus aucun bloc `À COMPLÉTER` : identité, SIRET, adresse, téléphone, médiateur (CM2C) et
+hébergement sont renseignés depuis le 15 septembre 2026. La classe `.todo` reste dans `style.css`
+pour la prochaine fois qu'une mention devra attendre une information.
 
 Les blocs à compléter s'affichent en rouge sur la page : impossible de les publier sans les voir.
 
