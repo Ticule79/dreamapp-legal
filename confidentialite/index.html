@@ -17,7 +17,7 @@
 </nav>
 
 <h1>Politique de confidentialité</h1>
-<p class="updated">Version 2 — 7 septembre 2026. C'est cette version que l'application vous demande d'accepter.</p>
+<p class="updated">Version 3 — 19 septembre 2026. C'est cette version que l'application vous demande d'accepter.</p>
 
 <p>DreamApp enregistre vos rêves la nuit et les transcrit sur votre téléphone. Ce document dit
 exactement ce qui reste sur l'appareil, ce qui en sort, et ce que vous pouvez exiger.</p>
@@ -40,12 +40,26 @@ SIRET 853&nbsp;352&nbsp;268&nbsp;00033, 66&nbsp;B rue de la Couillauderie, 44340
 <p>Uniquement lorsque vous demandez l'analyse d'un rêve précis, et seulement si vous avez donné
 votre accord au préalable. Sont alors transmis&nbsp;:</p>
 <ul>
-  <li>le <strong>texte de ce rêve</strong>&nbsp;;</li>
+  <li>le <strong>texte de ce rêve</strong>, avec ses <strong>mots-clés</strong> et sa
+  <strong>langue</strong>, qui servent à choisir les repères de lecture et la langue de la
+  réponse&nbsp;;</li>
   <li>un <strong>identifiant anonyme</strong> propre à votre appareil&nbsp;;</li>
   <li>le <strong>nombre d'analyses</strong> qu'il vous reste.</li>
 </ul>
 <p>Rien d'autre. Pas votre nom, pas votre adresse e-mail, pas votre position, pas d'identifiant
 publicitaire, pas votre journal.</p>
+
+<h3>Les trois contacts réseau qui ne portent aucun rêve</h3>
+<ul>
+  <li>Au premier usage, l'application télécharge le modèle de reconnaissance vocale depuis
+  <strong>Hugging Face</strong>, qui voit alors votre adresse IP comme n'importe quel site que vous
+  visitez. Aucune donnée n'est envoyée&nbsp;: c'est un téléchargement.</li>
+  <li>À chaque lancement, l'application lit votre <strong>compteur d'analyses</strong> chez
+  Supabase, sous votre identifiant anonyme, pour l'afficher hors connexion ensuite.</li>
+  <li>Les achats passent par <strong>Google Play</strong>, dont la bibliothèque de facturation
+  transmet à Google ses propres données techniques, selon les règles de confidentialité de Google
+  Play.</li>
+</ul>
 
 <h3>Les rêves proches, si vous l'autorisez séparément</h3>
 <p>Un rêve en rappelle souvent d'autres. L'application peut joindre à l'analyse un court extrait des
@@ -125,12 +139,16 @@ professionnel de santé.</p>
 <h2>Si ce texte change</h2>
 <p>Toute modification substantielle donne lieu à une nouvelle version, datée ici, et votre accord
 vous est redemandé dans l'application.</p>
+<p><strong>Version 3 — 19 septembre 2026.</strong> Le texte nomme ce qui part réellement avec le
+récit (ses mots-clés et sa langue) et les trois contacts réseau qui ne portent aucun rêve&nbsp;:
+le téléchargement du modèle, la lecture du compteur, la facturation Google Play. Rien n'a changé
+dans ce que fait l'application&nbsp;; ce qui change, c'est que le texte le dit tout entier.</p>
 <p><strong>Version 2 — 7 septembre 2026.</strong> L'analyse peut désormais recevoir de courts
 extraits de vos rêves proches, sous un accord distinct décrit plus haut. La version 1 promettait
 qu'aucun autre rêve ne pouvait sortir&nbsp;; ce n'est plus exact, et c'est pourquoi votre accord
 vous est redemandé.</p>
 
-<footer>DreamApp — édité par Noverane. Dernière mise à jour&nbsp;: 7 septembre 2026.</footer>
+<footer>DreamApp — édité par Noverane. Dernière mise à jour&nbsp;: 19 septembre 2026.</footer>
 
 </main>
 </body>
